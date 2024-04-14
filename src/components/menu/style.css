@@ -1,0 +1,95 @@
+.menu {
+    padding: 13px 12px 13px 16px;
+    width: 275px;
+    margin-top: 62px;
+    border-right: 1px solid #ECECED;
+}
+
+.menu-buttons {
+    background-color: #F6F4F4;
+    border-radius: 8px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.menu-button {
+    padding: 10px 12px 10px 12px;
+    font-size: 14px;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-button-checked {
+    padding: 10px 12px 10px 12px;
+    font-size: 14px;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+}
+
+
+.menu-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 6px 0px 6px;
+}
+
+.menu-nav-items {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.menu-items {
+    border-bottom: 1px solid #ECECED;
+
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 0px 8px 0px 8px;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.menu-item-checked {
+    display: flex;
+    align-items: center;
+    padding: 0px 8px 0px 8px;
+    justify-content: space-between;
+    border-radius: 8px;
+    background-color: #FAF4F4;
+}
+
+.menu-name-item {
+    color: #A85757;
+
+}
+
+p {
+    font-size: 14px;
+    font-weight: 475;
+}
+
+span {
+    padding: 4px 7px 4px 7px;
+    background-color: #A85757;
+    color: white;
+    border-radius: 4px;
+}

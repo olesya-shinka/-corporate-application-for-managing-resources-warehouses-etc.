@@ -1,0 +1,50 @@
+header {
+    height: 62px;
+    padding: 13px 12px 13px 16px;
+    display: flex;
+    gap: 10%;
+    align-items: center;
+}
+
+button {
+    color: #352424;
+    font-size: 16px;
+    font-weight: 475;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 4px;
+    padding: 8px;
+    transition: all 500ms ease-in;
+}
+
+button:hover{
+    background-color: #A85757;
+    border-radius: 8px;
+    color: white;
+    transform: scale(1.06);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #352424;
+}
+
+.header-logo {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
