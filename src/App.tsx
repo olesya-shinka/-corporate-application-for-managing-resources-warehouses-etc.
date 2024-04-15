@@ -1,11 +1,9 @@
-import Header from "./components/header";
-import Menu from "./components/menu";
+import AppRoutes from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Menu />
+      <AppRoutes />
     </div>
   );
 }

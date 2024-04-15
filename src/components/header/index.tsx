@@ -9,25 +9,25 @@ function Header() {
         <h4 className="header-logo-title">PROFI KIT</h4>
       </div>
       <div className="header-nav">
-        <button>
+        <button className="header-btn">
           <a href="#">KIT CRM</a>
         </button>
-        <button>
+        <button className="header-btn">
           <a href="#">KIT Master</a>
         </button>
-        <button>
+        <button className="header-btn">
           <a href="#">KIT Tracker</a>
         </button>
-        <button>
+        <button className="header-btn">
           <a href="#">KIT Warehouse</a>
         </button>
-        <button>
+        <button className="header-btn">
           <a href="#">KIT ARM</a>
         </button>
-        <button>
+        <button className="header-btn">
           <a href="#">KIT Dashboard</a>
         </button>
-        <button>
+        <button className="header-btn">
           <a href="#">KIT Admin</a>
         </button>
       </div>

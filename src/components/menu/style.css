@@ -2,7 +2,6 @@
     padding: 13px 12px 13px 16px;
     width: 275px;
     margin-top: 62px;
-    border-right: 1px solid #ECECED;
 }
 
 .menu-buttons {
@@ -22,6 +21,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .menu-button-checked {
@@ -32,6 +33,12 @@
     align-items: center;
     gap: 8px;
     background-color: white;
+    border-color: transparent;
+}
+
+.menu-button-checked:hover {
+    background-color: white;
+    color: black;
 }
 
 

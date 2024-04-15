@@ -6,3 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #352424;
 }
+
+.wrapper{
+  display: flex;
+}
