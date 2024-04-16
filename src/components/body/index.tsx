@@ -1,28 +1,15 @@
 import { useEffect, useState } from "react";
 import "./style.css";
-import { getItems, login } from "../../api";
+import { useGetItemsQuery } from "../../api";
 
 function BodyItems() {
-  const [items, setItems] = useState([]);
-  const [token, setToken] = useState(null);
+  const [page, setPage] = useState(1); 
+  const { data: items } = useGetItemsQuery({ page }); 
+
   useEffect(() => {
-    login("username", "password")
-      .then((newToken) => {
-        setToken(newToken);
-        getItems(newToken)
-          .then((data) => {
-            setItems(data);
-          })
-          .catch((error) => {
-            console.error("Failed to fetch items:", error);
-          });
-      })
-      .catch((error) => {
-        console.error("Failed to login:", error);
-      });
-  }, []);
-  console.log(items);
-  console.log(token);
+    console.log(items);
+  }, [items]);
+
   return <div className="body"></div>;
 }
 
