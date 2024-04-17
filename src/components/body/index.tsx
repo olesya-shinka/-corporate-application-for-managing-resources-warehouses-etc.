@@ -1,16 +1,47 @@
 import { useEffect, useState } from "react";
-import "./style.css";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetItemsQuery } from "../../api";
+import { setItems, setSearchResults } from "../../store/slice/itemsSlice";
+import { RootState } from "../../store/store";
 
 function BodyItems() {
-  const [page, setPage] = useState(1); 
-  const { data: items } = useGetItemsQuery({ page }); 
+  const dispatch = useDispatch();
+  const { data: items } = useGetItemsQuery({ page: 1 });
+
+  interface Item {
+    id: string;
+    name: string;
+    description: string;
+    measurement_units: string;
+    deposit: any;
+  }
 
   useEffect(() => {
-    console.log(items);
-  }, [items]);
+    if (items) {
+      dispatch(setItems(items.result));
+    }
+  }, [items, dispatch]);
 
-  return <div className="body"></div>;
+  const allItems = useSelector((state: RootState) => state.items.allItems);
+  const searchResults = useSelector(
+    (state: RootState) => state.items.searchResults
+  );
+  console.log(allItems, searchResults)
+
+  return (
+    <div className="body">
+      {searchResults.length > 0
+        ? searchResults.map((item: Item) => (
+            <div key={item.id}>{item.name}</div>
+          ))
+        : allItems.map((item: Item) => (
+            <div key={item.id}>
+              <p>{item.name}</p>
+              <p>{item.description}</p>
+            </div>
+          ))}
+    </div>
+  );
 }
 
 export default BodyItems;

@@ -7,9 +7,10 @@ function Main() {
   return (
     <>
       <Header />
-      <div className="wrapper"></div>
-      <Menu />
-      <BodyItems />
+      <div className="wrapper">
+        <Menu />
+        <BodyItems />
+      </div>
     </>
   );
 }
