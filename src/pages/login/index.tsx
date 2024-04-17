@@ -38,6 +38,7 @@ function Login() {
         type="text"
         value={login}
         onChange={(e) => setLogin(e.target.value)}
+        placeholder="admin"
       />
       <input
         className="login-input"
