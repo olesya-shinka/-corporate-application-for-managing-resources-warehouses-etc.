@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../api";
 import "./style.css";
 import { useDispatch } from "react-redux";
-import { setToken, setUserCredentials } from "../../store/slice/userSlice";
+import { setAuth } from "../../store/slice/userSlice";
 
 function Login() {
   const [login, setLogin] = useState("");
@@ -18,10 +18,12 @@ function Login() {
       if ("error" in result) {
         console.error("Error logging in:", result.error);
       } else {
-        const { token } = result.data;
-        dispatch(setToken(token));
-        dispatch(setUserCredentials({ login, password }));
-        localStorage.setItem("access_token", token);
+        dispatch(
+          setAuth({
+            access: result.data.access_token,
+            refresh: result.data.refresh_token,
+          })
+        );
         navigate("/");
       }
     } catch (error) {
