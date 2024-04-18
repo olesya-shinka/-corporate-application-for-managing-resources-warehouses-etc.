@@ -23,8 +23,8 @@ export const api = createApi({
                 body: { login, password },
             }),
         }),
-        getItems: builder.query<any, { page: number }>({
-            query: ({ page }) => `wh/items?page=${page}&pageSize=10`,
+        getItems: builder.query<any, { page: number, pageSize: number }>({
+            query: ({ page, pageSize }) => `wh/items?page=${page}&pageSize=${pageSize}`,
         }),
     }),
 });

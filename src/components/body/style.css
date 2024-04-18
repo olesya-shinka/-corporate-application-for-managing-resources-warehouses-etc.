@@ -1,3 +1,130 @@
-.body{
+.body-content {
     border-left: 1px solid #ECECED;
+    width: 100%;
+    padding: 36px 15px 15px 15px;
+}
+
+.body-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 20px 44px 20px;
+}
+
+.body-header-title {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.body-header-btn {
+    display: flex;
+    gap: 16px;
+}
+
+.body-header-box {
+    gap: 16px;
+    display: flex;
+}
+
+.body-header-input {
+    padding: 10px;
+}
+
+.body-header-input-btn {
+    padding: 10px 14px 10px 14px;
+    background-color: #514A4A;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.body-header-btn-new {
+    background-color: #A85757;
+    color: white;
+    font-size: 14px;
+    padding: 10px 14px 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.body-table {
+    display: flex;
+}
+
+.body-table-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 40%;
+}
+
+.body-table-subtitle-div {
+    background-color: #F6F4F4;
+    display: flex;
+    padding: 0px 24px 0px 24px;
+}
+
+.body-table-subtitle {
+    background-color: #F6F4F4;
+    font-size: 16px;
+    font-weight: 475;
+}
+
+.body-table-text-div {
+    display: flex;
+    padding: 0px 24px 24px 24px;
+    border-bottom: 1px solid #F6F4F4;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.body-table-text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.body-table-edit-btn {
+    border-color: transparent;
+    background-color: white;
+    cursor: pointer;
+}
+
+.body-table-edit-btn:hover {
+    background-color: white;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-select {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.pagination-text {
+    font-size: 14px;
+    font-weight: 475;
+    color: #514A4A;
+}
+
+select.custom-select {
+    background:  url('../../../public/down.svg') no-repeat right 10px center;
+    color: white;
+    background-color: #514A4A;
+    padding: 10px 40px 10px 16px;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select.custom-select:focus {
+    border-color: white;
 }
