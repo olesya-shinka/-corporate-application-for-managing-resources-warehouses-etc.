@@ -7,6 +7,8 @@ import { setItems } from "../../store/slice/itemsSlice";
 import { RootState } from "../../store/store";
 import Pagination from "../pagination";
 import SortedItems from "../sortedItems";
+import { ModalCreate } from "../modalAdd";
+import { ModalEdit } from "../modalEdit";
 
 function BodyItems() {
   const dispatch = useDispatch();
@@ -15,7 +17,9 @@ function BodyItems() {
   const { data: items } = useGetItemsQuery({ page, pageSize });
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [sortApplied, setSortApplied] = useState(false);
-  const [sortingItems, setSortingItems] = useState([]);
+  const [modalNew, setModalNew] = useState(false);
+  const [modalEdit, setModalEdit] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
   interface Item {
     id: string;
@@ -43,9 +47,9 @@ function BodyItems() {
 
   const totalPages = items ? Math.ceil(items.total / pageSize) : 0;
   const allItems = useSelector((state: RootState) => state.items.allItems);
-  // const searchResults = useSelector(
-  //   (state: RootState) => state.items.searchResults
-  // );
+  const searchResults = useSelector(
+    (state: RootState) => state.items.searchResults
+  );
   const sortItemsByName = (order: "asc" | "desc") => {
     const sortedItems = allItems.slice().sort((a: Item, b: Item) => {
       const numA = parseFloat(a.name);
@@ -67,7 +71,24 @@ function BodyItems() {
   const handleSortCancel = () => {
     setSortApplied(false);
   };
-  const sortedItems = sortItemsByName(sortOrder);
+  // const sortedItems = sortItemsByName(sortOrder);
+
+  const handleOpenModal = () => {
+    setModalNew(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalNew(false);
+  };
+
+  const handleOpenModalEdit = (item: Item) => {
+    setSelectedItem(item);
+    setModalEdit(true);
+  };
+
+  const handleCloseModalEdit = () => {
+    setModalEdit(false);
+  };
 
   const getPageContent = () => {
     if (sortApplied) {
@@ -97,12 +118,19 @@ function BodyItems() {
             <div className="body-header-box">
               <div>
                 <input type="text" className="body-header-input" />
-                <button className="body-header-input-btn">Поиск</button>
+                <button className="body-header-input-btn" >Поиск</button>
               </div>
-              <button className="body-header-btn-new">
+              <button className="body-header-btn-new" onClick={handleOpenModal}>
                 <img src="plus-02.svg" alt="+" />
                 Новая позиция
               </button>
+              {modalNew && <ModalCreate handleCloseModal={handleCloseModal} />}
+              {modalEdit && selectedItem && (
+                <ModalEdit
+                  item={selectedItem}
+                  handleCloseModalEdit={handleCloseModalEdit}
+                />
+              )}
             </div>
           </div>
           <div className="body-table">
@@ -145,7 +173,10 @@ function BodyItems() {
               {allItems.map((item: Item, id) => (
                 <div className="body-table-text-div" key={id}>
                   <p className="body-table-text">{item.code}</p>
-                  <button className="body-table-edit-btn">
+                  <button
+                    className="body-table-edit-btn"
+                    onClick={() => handleOpenModalEdit(item)}
+                  >
                     <img src="edit-02.svg" alt="edit" />
                   </button>
                 </div>
