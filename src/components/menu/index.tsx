@@ -40,7 +40,7 @@ function Menu() {
           </div>
           <div className="menu-item-checked">
             <p className="menu-name-item">Склад ЗИП</p>
-            <span>600</span>
+            <span>214</span>
           </div>
         </div>
         <div className="menu-item">

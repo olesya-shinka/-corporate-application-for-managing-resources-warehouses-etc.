@@ -65,12 +65,27 @@
     background-color: #F6F4F4;
     display: flex;
     padding: 0px 24px 0px 24px;
+    align-items: center;
+    gap: 16px;
 }
 
 .body-table-subtitle {
     background-color: #F6F4F4;
     font-size: 16px;
     font-weight: 475;
+}
+
+.body-table-subtitle-div-btns {
+    font-size: 10px;
+    background-color: transparent;
+    border: 1px solid #A85757;
+    border-radius: 4px;
+    width: 73px;
+}
+
+.body-table-subtitle-div-btns.active {
+    background-color: #A85757;
+    color: white;
 }
 
 .body-table-text-div {
@@ -115,7 +130,7 @@
 }
 
 select.custom-select {
-    background:  url('../../../public/down.svg') no-repeat right 10px center;
+    background: url('../../../public/down.svg') no-repeat right 10px center;
     color: white;
     background-color: #514A4A;
     padding: 10px 40px 10px 16px;
